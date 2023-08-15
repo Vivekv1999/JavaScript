@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>
+        Enter the value
+    </span>
+    <input type="text" id="input"/>
+    <br/>
+    <br/>
+    <button onclick="push()">Push</button>
+    <button onclick="pop()">Pop</button>
+    <button onclick="show()">SHOW</button>
+
+    <span id="showData"></span>
+
+    <br/>
+    <br/>
+    <input type="text" />
+
+    <script>
+        let data=[]
+        let arrLength=data.length
+
+        function push(){
+            let newvalue=document.getElementById("input").value
+            if(newvalue){
+                console.log(newvalue);
+                alert(newvalue + "added succesfully")
+                data[arrLength]=newvalue
+                arrLength++
+                console.log(data,"[[[[]]]]");
+            }else{
+                alert("enter value first to input in stack")
+                
+            }
+            document.getElementById("input").value=""
+            
+        }
+        
+        function pop(){
+            console.log(data,";;;;;",arrLength);
+            arrLength--
+            data.length= arrLength
+        }
+
+        function show(){
+for(let i=0;i<data.length;i++){
+    document.getElementById("showData").innerHTML=data
+    console.log(data[i]);
+}
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    Recursive binary Search
+  </h1>
+  <script>
+    let data = [8,15, 24,28,64,84,97];        ////this is must when you use binary serch array is must be sorted//---time consuming
+let findElement = 80;
+let start = 0;
+let end = data.length - 1;
+let position = undefined;
+
+function recursiveSearch(start, end) {
+  let mid =Math.floor((start + end)/2);
+  console.log(start,end,mid);
+  if (start <= end) {
+    if (data[mid] == findElement) {
+      position = mid;
+      return true ;
+    } else if (data[mid] < findElement) {
+      start = mid + 1;
+      recursiveSearch(start, end);
+    } else {
+        end=mid-1
+        recursiveSearch(start,end)
+    }
+  } else {
+    console.log("inini--element is not in array");
+    return;
+  }
+}
+
+recursiveSearch(start, end);
+console.log(position,"position");
+
+  </script>
+</body>
+</html>
